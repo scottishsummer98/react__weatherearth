@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
 body {
   padding: 2rem;
   margin: auto;
-  font-family: 'Nanum Myeongjo', serif;
-  background-color: white;
-  color: black;
-  width:65%
+  font-family: 'PT Serif', serif;
+  background-color: black;
+  color: white;
+  width:80%
 }
 
 /* Media Queries Medium Devices*/
