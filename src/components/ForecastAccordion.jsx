@@ -23,75 +23,74 @@ function ForecastAccordion({ data }) {
         >
           {data.list.map((item, idx) => (
             <SwiperSlide>
-              <div className="forecast_container_body">
-                <p className="city">{moment(item.dt_txt).format('dddd')}</p>
-                <p className="city">
-                  {moment(item.dt_txt).format('MMMM Do YYYY')}
-                </p>
-                <p className="city">{moment(item.dt_txt).format('LT')}</p>
+              <div className="container_forecast">
                 <div className="top">
-                  <div>
-                    <p className="temperature">
-                      {Math.round(item.main.temp_max)}°C /{' '}
-                      {Math.round(item.main.temp_min)}°C
-                    </p>
-                    <p className="weather-description">
-                      {item.weather[0].description}
-                    </p>
+                  <div className="topLeft">
+                    <div className="topLeftUp">
+                      <img
+                        alt="weather"
+                        className="topLeftUp_weatherIcon"
+                        src={`icons/${item.weather[0].icon}.png`}
+                      />
+                      <p className="topLeftUp_weatherDescription">
+                        {item.weather[0].description}
+                      </p>
+                    </div>
+                    <div className="topLeftDown">
+                      <p className="topLeftDown_weatherTemperature">
+                        {Math.round(item.main.temp_max)}°C /{' '}
+                        {Math.round(item.main.temp_min)}°C
+                      </p>
+                    </div>
                   </div>
-                  <img
-                    alt="weather"
-                    className="weather-icon"
-                    src={`icons/${item.weather[0].icon}.png`}
-                  />
+                  <div className="topRight">
+                    <div className="topRight_time">
+                      {moment(item.dt_txt).format('dddd')}
+                    </div>
+                    <div className="topRight_date">
+                      {moment(item.dt_txt).format('MMMM Do, YYYY')}
+                    </div>
+                    <div className="topRight_city">
+                      {moment(item.dt_txt).format('LT')}
+                    </div>
+                  </div>
                 </div>
                 <div className="bottom">
                   <div className="details">
-                    <div className="parameter-row">
-                      {/* <h5>
-                  <b>Feels Like</b>
-                </h5> */}
+                    <div className="bottomRow">
                       <img
                         alt="weather"
-                        className="weather-details-icon"
+                        className="bottomRow_weatherIcon"
                         src={`icons/thermometer.png`}
                       />
-                      <span className="parameter-value">
+                      <span className="bottomRow_value">
                         {item.main.feels_like} °C
                       </span>
-                      {/* <h5>
-                  <b>Wind</b>
-                </h5> */}
                       <img
                         alt="weather"
-                        className="weather-details-icon"
+                        className="bottomRow_weatherIcon"
                         src={`icons/wind.png`}
                       />
-                      <span className="parameter-value">
+                      <span className="bottomRow_value">
                         {item.wind.speed} m/s
                       </span>
                     </div>
-                    <div className="parameter-row">
-                      {/* <h5>
-                  <b>Humidity</b>
-                </h5> */}
+                    <div className="bottomRow">
                       <img
                         alt="weather"
-                        className="weather-details-icon"
+                        className="bottomRow_weatherIcon"
                         src={`icons/humidity.png`}
                       />
-                      <span className="parameter-value">
+                      <span className="bottomRow_value">
                         {item.main.humidity} %
                       </span>
-                      {/* <h5>
-                  <b>Pressure</b>
-                </h5> */}
                       <img
                         alt="weather"
-                        className="weather-details-icon"
+                        className="bottomRow_weatherIcon"
+                        style={{ width: '4rem' }}
                         src={`icons/air.png`}
                       />
-                      <span className="parameter-value">
+                      <span className="bottomRow_value">
                         {item.main.pressure} hPa
                       </span>
                     </div>
