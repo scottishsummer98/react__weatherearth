@@ -1,12 +1,25 @@
 import React from 'react'
+import moment from 'moment'
 import './CurrentWeather.css'
+const WEEK_DAYS = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+]
 
 function CurrentWeather({ data }) {
+  const dayInAWeek = new Date().getDay()
   return (
     <div className="weather">
+      <p className="city">{moment().format('dddd')}</p>
+      <p className="city">{moment().format('MMMM Do YYYY')}</p>
+      <p className="city">{moment().format('LT')}</p>
       <div className="top">
         <div>
-          <p className="city">{data.city}</p>
           <p className="temperature">{Math.round(data.main.temp)}°C</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>

@@ -1,24 +1,12 @@
 import React from 'react'
+import moment from 'moment'
 import './ForecastAccordion.css'
 import { Swiper, SwiperSlide } from 'swiper/react'
 // Import Swiper styles
 import 'swiper/css'
 import { Autoplay } from 'swiper'
-const WEEK_DAYS = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday',
-]
 
 function ForecastAccordion({ data }) {
-  const dayInAWeek = new Date().getDay()
-  const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
-    WEEK_DAYS.slice(0, dayInAWeek),
-  )
   return (
     <>
       <label className="title">Upcoming Forecast</label>
@@ -27,21 +15,22 @@ function ForecastAccordion({ data }) {
           className="mySwiper"
           slidesPerView={4}
           spaceBetween={40}
-          loop={true}
           autoplay={{
-            delay: 2000,
+            delay: 1000,
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
         >
-          {data.list.slice(0, 7).map((item, idx) => (
+          {data.list.map((item, idx) => (
             <SwiperSlide>
               <div className="forecast_container_body">
+                <p className="city">{moment(item.dt_txt).format('dddd')}</p>
+                <p className="city">
+                  {moment(item.dt_txt).format('MMMM Do YYYY')}
+                </p>
+                <p className="city">{moment(item.dt_txt).format('LT')}</p>
                 <div className="top">
                   <div>
-                    <p className="city">
-                      {forecastDays[idx]} {item.dt_txt}
-                    </p>
                     <p className="temperature">
                       {Math.round(item.main.temp_max)}°C /{' '}
                       {Math.round(item.main.temp_min)}°C
