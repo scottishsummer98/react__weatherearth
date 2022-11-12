@@ -13,7 +13,7 @@ function Search({ onSearchChange }) {
     }
 
     return fetch(
-      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${inputValue}`,
       options,
     )
       .then((response) => response.json())

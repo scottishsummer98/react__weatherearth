@@ -28,9 +28,15 @@ const App = () => {
   }
   return (
     <div>
-      <Search onSearchChange={handleOnSearchChange} />
-      {currentWeather && <CurrentWeather data={currentWeather} />}
-      {forecast && <ForecastAccordion data={forecast} />}
+      <div className="search_container">
+        <Search onSearchChange={handleOnSearchChange} />
+      </div>
+      <div className="currentweather_container">
+        {currentWeather && <CurrentWeather data={currentWeather} />}
+      </div>
+      <div className="forecastaccordion_container">
+        {forecast && <ForecastAccordion data={forecast} />}
+      </div>
     </div>
   )
 }
