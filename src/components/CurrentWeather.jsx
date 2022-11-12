@@ -4,56 +4,69 @@ import './CurrentWeather.css'
 
 function CurrentWeather({ data }) {
   return (
-    <div className="weather">
-      <p className="city">{moment().format('dddd')}</p>
-      <p className="city">{moment().format('MMMM Do YYYY')}</p>
-      <p className="city">{moment().format('LT')}</p>
+    <div className="container">
       <div className="top">
-        <div>
-          <p className="temperature">{Math.round(data.main.temp)}°C</p>
-          <p className="weather-description">{data.weather[0].description}</p>
+        <div className="topLeft">
+          <div className="topLeftUp">
+            <img
+              alt="weather"
+              className="topLeftUp_weatherIcon"
+              src={`icons/${data.weather[0].icon}.png`}
+            />
+            <p className="topLeftUp_weatherDescription">
+              {data.weather[0].description}
+            </p>
+          </div>
+          <div className="topLeftDown">
+            <p className="topLeftDown_weatherTemperature">
+              {Math.round(data.main.temp)}°C
+            </p>
+          </div>
         </div>
-        <img
-          alt="weather"
-          className="weather-icon"
-          src={`icons/${data.weather[0].icon}.png`}
-        />
+        <div className="topRight">
+          <div className="topRight_time">{moment().format('LT')}</div>
+          <div className="topRight_date">
+            {moment().format('MMMM Do, YYYY')}
+          </div>
+          <div className="topRight_city">{data.city}</div>
+        </div>
       </div>
       <div className="bottom">
         <div className="details">
-          <div className="parameter-row">
+          <div className="bottomRow">
             <img
               alt="weather"
-              className="weather-details-icon"
+              className="bottomRow_weatherIcon"
               src={`icons/thermometer.png`}
             />
-            <span className="parameter-value">
+            <span className="bottomRow_value">
               {Math.round(data.main.feels_like)} °C
             </span>
             <img
               alt="weather"
-              className="weather-details-icon"
+              className="bottomRow_weatherIcon"
               src={`icons/wind.png`}
             />
-            <span className="parameter-value">
+            <span className="bottomRow_value">
               {Math.round(data.wind.speed)} m/s
             </span>
           </div>
-          <div className="parameter-row">
+          <div className="bottomRow">
             <img
               alt="weather"
-              className="weather-details-icon"
+              className="bottomRow_weatherIcon"
               src={`icons/humidity.png`}
             />
-            <span className="parameter-value">
+            <span className="bottomRow_value">
               {Math.round(data.main.humidity)} %
             </span>
             <img
               alt="weather"
-              className="weather-details-icon"
+              className="bottomRow_weatherIcon"
+              style={{ width: '4rem' }}
               src={`icons/air.png`}
             />
-            <span className="parameter-value">
+            <span className="bottomRow_value">
               {Math.round(data.main.pressure)} hPa
             </span>
           </div>

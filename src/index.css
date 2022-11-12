@@ -3,7 +3,7 @@ body {
   padding: 2rem;
   margin: auto;
   font-family: 'PT Serif', serif;
-  background-image: linear-gradient(to right, #4D4D4D, #3C3C3C, #1E1E1E, #111111, #000000);
+  background-image: linear-gradient(to right, #151F50, #383274, #8E5D9B);
   color: white;
 }
 .search_container {
@@ -15,11 +15,11 @@ body {
     position: relative;
 }
 .currentweather_container {
-  width: 15%;
+  width: 21%;
   float:left;
 }
 .forecastaccordion_container {
-  width: 80%;
+  width: 78%;
   float:right;
 }
 /* Media Queries Medium Devices*/
