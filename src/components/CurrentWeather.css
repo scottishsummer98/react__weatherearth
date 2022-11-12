@@ -3,7 +3,7 @@
   border-radius: 15px;
   box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
   color: white;
-  background-color: #8659979c;
+  background-color: #9247ad35;
 }
 .container:hover {
   transition: ease-in-out 1s;
@@ -39,18 +39,21 @@
   font-size: 1.5rem;
   margin: 1rem;
   padding: 0;
+  text-align: right;
 }
 .topRight_date {
   font-weight: 400;
   font-size: 1rem;
   margin: 1rem;
   padding: 0;
+  text-align: right;
 }
 .topRight_city {
   font-weight: 400;
   font-size: 1rem;
   margin: 1rem;
   padding: 0;
+  text-align: right;
 }
 .bottom {
   display: flex;
@@ -69,4 +72,108 @@
 .bottomRow_value {
   font-weight: 600;
   font-size: 1rem;
+}
+
+/* Media Queries Medium Devices*/
+@media screen and (max-width:1024px){
+  .topLeftUp {
+    margin: 0;
+    gap: 1rem;
+  }
+  .topLeftUp_weatherIcon {
+    width: 2rem;
+    margin: .5rem;
+  }
+  .topLeftUp_weatherDescription {
+    font-weight: 300;
+    font-size: 1rem;
+    margin: .5rem;
+    text-transform: capitalize;
+  }
+  .topLeftDown_weatherTemperature {
+    font-weight: 400;
+    font-size: 1.7rem;
+    margin: 1rem;
+  }
+  .topRight_time {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .topRight_date {
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .topRight_city {
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .bottomRow_weatherIcon {
+    width: 2.5rem;
+    margin: .5rem;
+  }
+  .bottomRow_value {
+    font-weight: 600;
+    font-size: .8rem;
+  }
+}
+
+/* Media Queries Small Devices*/
+@media screen and (max-width:600px){
+  .topLeftUp {
+    margin: 0;
+    gap: 1rem;
+  }
+  .topLeftUp_weatherIcon {
+    width: 2rem;
+    margin: .5rem;
+  }
+  .topLeftUp_weatherDescription {
+    font-weight: 300;
+    font-size: 1rem;
+    margin: .5rem;
+    text-transform: capitalize;
+  }
+  .topLeftDown_weatherTemperature {
+    font-weight: 400;
+    font-size: 1.7rem;
+    margin: 1rem;
+  }
+  .topRight_time {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .topRight_date {
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .topRight_city {
+    font-weight: 400;
+    font-size: .8rem;
+    margin: 1rem;
+    padding: 0;
+    text-align: right;
+  }
+  .bottomRow_weatherIcon {
+    width: 2.5rem;
+    margin: .5rem;
+  }
+  .bottomRow_value {
+    font-weight: 600;
+    font-size: .8rem;
+  }
 }

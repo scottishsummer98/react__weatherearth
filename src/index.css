@@ -8,7 +8,7 @@ body {
 }
 .search_container {
   width: 20%;
-  margin: 5rem auto 2rem;
+  margin: 2rem auto;
   background-color: white;
   color: black;
   z-index: 2;
@@ -16,11 +16,11 @@ body {
 }
 .currentweather_container {
   width: 21%;
-  float:left;
+  margin: 1rem auto;
 }
 .forecastaccordion_container {
-  width: 78%;
-  float:right;
+  width: 87%;
+  margin: 3rem auto;
 }
 /* Media Queries Medium Devices*/
 @media screen and (max-width:1024px){
@@ -28,12 +28,37 @@ body {
     padding: 1rem;
     width:100%
   }
+  .search_container {
+    width: 40%;
+    margin: 2rem auto;
+  }
+  .currentweather_container {
+    width: 45%;
+    margin: 1rem auto;
+  }
+  .forecastaccordion_container {
+    width: auto;
+    justify-content: center;
+  }
 }
 
 /* Media Queries Small Devices*/
 @media screen and (max-width:600px){
   body {
-    padding: 1rem;
-    width:100%
+    width:90%;
+  }
+  .search_container {
+    width: auto;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+  .currentweather_container {
+    width: auto;
+    justify-content: center;
+    margin: auto;
+  }
+  .forecastaccordion_container {
+    width: auto;
+    justify-content: center;
   }
 }

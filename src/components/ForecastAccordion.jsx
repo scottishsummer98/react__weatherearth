@@ -9,17 +9,31 @@ import { Autoplay } from 'swiper'
 function ForecastAccordion({ data }) {
   return (
     <>
-      <label className="title">Upcoming Forecast</label>
       <div>
         <Swiper
           className="mySwiper"
           slidesPerView={4}
-          spaceBetween={40}
+          spaceBetween={5}
+          width={920}
           autoplay={{
-            delay: 1000,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           modules={[Autoplay]}
+          breakpoints={{
+            // when window width is >= 600px
+            600: {
+              width: 830,
+              slidesPerView: 2,
+              spaceBetween: 2,
+            },
+            // when window width is >= 300px
+            300: {
+              width: 355,
+              slidesPerView: 1,
+              spaceBetween: 5,
+            },
+          }}
         >
           {data.list.map((item, idx) => (
             <SwiperSlide>
