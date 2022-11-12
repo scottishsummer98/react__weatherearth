@@ -1,18 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 import './CurrentWeather.css'
-const WEEK_DAYS = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-]
 
 function CurrentWeather({ data }) {
-  const dayInAWeek = new Date().getDay()
   return (
     <div className="weather">
       <p className="city">{moment().format('dddd')}</p>
@@ -32,9 +22,6 @@ function CurrentWeather({ data }) {
       <div className="bottom">
         <div className="details">
           <div className="parameter-row">
-            {/* <h5>
-              <b>Feels Like</b>
-            </h5> */}
             <img
               alt="weather"
               className="weather-details-icon"
@@ -43,9 +30,6 @@ function CurrentWeather({ data }) {
             <span className="parameter-value">
               {Math.round(data.main.feels_like)} °C
             </span>
-            {/* <h5>
-              <b>Wind</b>
-            </h5> */}
             <img
               alt="weather"
               className="weather-details-icon"
@@ -56,9 +40,6 @@ function CurrentWeather({ data }) {
             </span>
           </div>
           <div className="parameter-row">
-            {/* <h5>
-              <b>Humidity</b>
-            </h5> */}
             <img
               alt="weather"
               className="weather-details-icon"
@@ -67,9 +48,6 @@ function CurrentWeather({ data }) {
             <span className="parameter-value">
               {Math.round(data.main.humidity)} %
             </span>
-            {/* <h5>
-              <b>Pressure</b>
-            </h5> */}
             <img
               alt="weather"
               className="weather-details-icon"
